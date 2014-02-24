@@ -1,4 +1,6 @@
 BestYear::Application.routes.draw do
+  resources :offers
+
   root 'static_pages#home'
   match '/plan', to: 'static_pages#year_plan', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.

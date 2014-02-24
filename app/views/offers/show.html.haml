@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Offer type:
+  = @offer.offer_type
+%p
+  %b Rooms:
+  = @offer.rooms
+%p
+  %b Price:
+  = @offer.price
+%p
+  %b Address:
+  = @offer.address
+%p
+  %b City:
+  = @offer.city
+%p
+  %b Discribtion:
+  = @offer.discribtion
+%p
+  %b Floor:
+  = @offer.floor
+%p
+  %b Floors:
+  = @offer.floors
+
+= link_to 'Edit', edit_offer_path(@offer)
+\|
+= link_to 'Back', offers_path
