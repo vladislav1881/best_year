@@ -20,7 +20,7 @@
     = f.text_area :address
   .field
     = f.label :city
-    = f.text_field :city
+    = f.collection_select :city_id, City.order(:name), :id, :name, { include_blank: true }
   .field
     = f.label :discribtion
     = f.text_area :discribtion
@@ -30,5 +30,14 @@
   .field
     = f.label :floors
     = f.number_field :floors
+
+  #photos
+    = f.fields_for :photos do |photo|
+      = render 'photo_fields', :f => photo
+    .links.pull-right
+      -#= link_to_add_association content_tag(:i, '', class: 'icon-camera', title: t(:attach_photo)), f, :photos
+      = link_to_add_association t(:attach_photo), f, :photos
+
+
   .actions
     = f.submit 'Save'

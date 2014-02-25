@@ -1,4 +1,8 @@
 BestYear::Application.routes.draw do
+  resources :cities
+
+  resources :photos
+
   resources :offers
 
   root 'static_pages#home'

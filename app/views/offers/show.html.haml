@@ -25,6 +25,10 @@
   %b Floors:
   = @offer.floors
 
+%p
+  - @offer.photos.each do |photo|
+    = image_tag photo.image.url
+
 = link_to 'Edit', edit_offer_path(@offer)
 \|
 = link_to 'Back', offers_path

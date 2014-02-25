@@ -1,33 +1,7 @@
-%h1 Listing offers
+%p= link_to 'New Offer', new_offer_path
 
-%table
-  %tr
-    %th Offer type
-    %th Rooms
-    %th Price
-    %th Address
-    %th City
-    %th Discribtion
-    %th Floor
-    %th Floors
-    %th
-    %th
-    %th
-
+.offers
   - @offers.each do |offer|
-    %tr
-      %td= offer.offer_type
-      %td= offer.rooms
-      %td= offer.price
-      %td= offer.address
-      %td= offer.city
-      %td= offer.discribtion
-      %td= offer.floor
-      %td= offer.floors
-      %td= link_to 'Show', offer
-      %td= link_to 'Edit', edit_offer_path(offer)
-      %td= link_to 'Destroy', offer, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    = link_to((image_tag(offer.photos.first.image.url(:large)) rescue '[нет фото]'), offer)
 
-%br
 
-= link_to 'New Offer', new_offer_path
